@@ -1,0 +1,342 @@
+/* --- the CSS code  --- */
+:root {
+  --primary-color: #0d1b2a; 
+  --secondary-color: #415a77; 
+  --accent-color: #00aaff;   
+  --text-color: #e0e1dd;    
+  --bg-color: #f9f9f9;       
+  --card-bg: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0088cc;
+  transform: translateY(-3px);
+}
+
+/* --- CSS for Header --- */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+#nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+}
+
+#nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+#nav-links a:hover, #nav-links a.active {
+  color: var(--accent-color);
+}
+
+#nav-links a:hover::after, #nav-links a.active::after {
+  width: 100%;
+}
+
+/* --- the Menu css code --- */
+#menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero {
+  background: linear-gradient(rgba(13, 27, 42, 0.8), rgba(13, 27, 42, 0.8)), url('https://source.unsplash.com/random/1600x900/?technology,code') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+.hero h1 {
+  color: #fff;
+  font-size: 3.5rem;
+}
+.hero .subtitle {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+.hero .bio {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  margin-bottom: 2rem; 
+}
+
+/* --- here are the Contact Icon Styles --- */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-icons a {
+  color: #fff; 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: var(--accent-color); 
+  transform: translateY(-3px);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-icons a {
+  color: var(--text-color); 
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.skill-category {
+  flex: 1;
+  min-width: 300px;
+}
+.skill-category h3 {
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.skills-list span {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* --- this icludes Experience, Education, Projects (Card Layout with css code) --- */
+.experience-container, .education-container, .projects-container {
+  display: grid;
+  gap: 2rem;
+}
+.job-card, .education-card, .project-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.job-card:hover, .education-card:hover, .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.job-info {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 1rem;
+}
+.job-card ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+.projects-container {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.project-card p {
+  margin-bottom: 1.5rem;
+}
+
+.contact-details {
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+.contact-details p {
+  font-size: 1.1rem;
+  color: #444;
+}
+.contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+#contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+#contact-form input, #contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
+#contact-form input:focus, #contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+#form-status {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+/* --- focusing on preview (Media Queries) --- */
+@media (max-width: 992px) {
+  h2 { font-size: 2rem; }
+  section { padding: 3rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  #nav-links.show { display: flex; }
+  #nav-links li { padding: 1rem 0; }
+  #menu-toggle { display: flex; }
+  
+  #menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  #menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+  #menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .hero h1 { font-size: 2.5rem; }
+  .hero { padding: 4rem 1.5rem; }
+  .skills-container { flex-direction: column; gap: 2rem; }
+  
+  .icon { width: 28px; height: 28px; }
+}
